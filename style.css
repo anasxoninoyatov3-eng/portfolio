@@ -347,9 +347,28 @@ body{
 }
 
 /* portfolio */
-.portfolio-box{
-    margin-top: 2rem;
+.portfolio-container {
+    height: 32rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-top: 1rem;
+}
+.portfolio-container::-webkit-scrollbar {
+    width: 0.4rem;
+}
+.portfolio-container::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 0.5rem;
+}
 
+.portfolio-box{
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--second-text-color);
+}
+.portfolio-box:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 .portfolio-box .img-box{
     display: flex;
@@ -400,7 +419,6 @@ body{
 .portfolio-box .btn-box .btn{
     margin: 0 1 .15rem;
 }
-
 
 /* Contact Me! */
 .contact-box{
