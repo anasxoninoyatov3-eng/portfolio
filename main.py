@@ -12,9 +12,10 @@ CHAT_ID = "8283401187"
 def send_message():
     data = request.json
     
-    full_name = data.get('fullName')
-    telegram_user = data.get('telegramUser')
-    message = data.get('message')
+    # JS dan kelayotgan kalitlar bilan bir xil bo'lishi shart
+    full_name = data.get('fullName', '')
+    telegram_user = data.get('telegramUser', '')
+    message = data.get('message', '')
     
     text = (
         f"🔔 <b>Yangi xabar!</b>\n\n"
