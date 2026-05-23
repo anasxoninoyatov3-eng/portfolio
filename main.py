@@ -7,7 +7,7 @@ BOT_TOKEN = "8822680367:AAGXCUfXRQR7Kag1jbgs4LlELac0hJqVheU"
 # Replace with your Telegram Chat ID (you must start a chat with the bot to get this)
 # Easiest way to find your chat ID: Send a message to your bot,
 # then visit https://api.telegram.org/bot<YourBOTToken>/getUpdates
-CHAT_ID = "YOUR_CHAT_ID_HERE"
+CHAT_ID = "8283401187"
 
 async def send_contact_message(full_name: str, telegram_user: str, message_text: str):
     """
