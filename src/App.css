@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --bg-color: #0b0f19;
+  --main-color: #3b82f6;
+  --accent-color: #6366f1;
+  --gold-accent: #f59e0b;
+  --text-dark: #0f172a;
+  --text-grey: #475569;
+  --text-light: #94a3b8;
+  --bg-gradient: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+  --book-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --page-left-gradient: linear-gradient(90deg, #f8fafc 93%, #e2e8f0 100%);
+  --page-right-gradient: linear-gradient(270deg, #f8fafc 93%, #e2e8f0 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Outfit', 'Nunito', sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.portfolio-container-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Glassmorphism Title Header */
+.app-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInDown 1s 0.3s forwards;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: linear-gradient(to right, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-header p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+}
+
+/* Main 3D Book Layout Container */
+.book-wrapper {
+  position: relative;
+  width: 1100px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+}
+
+/* Custom Spine Overlay to make the book look physical */
+.book-spine-lines {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* Page styles */
+.book-page-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.05);
+}
+
+/* Left page custom shades */
+.page-left {
+  background: var(--page-left-gradient);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Right page custom shades */
+.page-right {
+  background: var(--page-right-gradient);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.page-inner-content {
+  padding: 3rem 2.5rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  position: relative;
+  color: var(--text-dark);
+}
+
+/* Scrollbars for Page Contents */
+.page-inner-content::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.page-inner-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 0.3rem;
+}
+
+.page-inner-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Book Cover Styling */
+.cover-page {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #030712 100%);
+  border: 4px double #1e293b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem;
+  position: relative;
+  color: #fff;
+  border-radius: 0 8px 8px 0;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8), 10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Embossed Gold Ornaments for Cover */
+.cover-page::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  pointer-events: none;
+}
+
+.cover-badge {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+.cover-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.cover-subtitle {
+  font-size: 1.2rem;
+  color: #3b82f6;
+  margin-bottom: 3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cover-avatar-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 2.5rem;
+}
+
+.cover-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.cover-footer {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+.page-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-footer {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 0.8rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Interactive Navigation Buttons on Pages */
+.next-page-swipe, .prev-page-swipe {
+  font-size: 1.2rem;
+  color: var(--text-grey);
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.next-page-swipe:hover {
+  color: var(--main-color);
+  transform: translateX(3px);
+}
+
+.prev-page-swipe:hover {
+  color: var(--main-color);
+  transform: translateX(-3px);
+}
+
+/* Profile Page (Page 1) */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.profile-img-holder {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.profile-img-holder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.profile-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.social-btn:hover {
+  background: var(--main-color);
+  color: #fff;
+  border-color: var(--main-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(59, 130, 246, 0.3);
+}
+
+.profile-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-grey);
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.profile-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  background: var(--main-color);
+  color: #fff !important;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.35);
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: 1.5px solid #cbd5e1;
+  color: var(--text-dark);
+  background: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+}
+
+/* Resume Timeline & Skills (Page 2) */
+.timeline-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-section-title i {
+  color: var(--main-color);
+}
+
+/* Education timeline vertical line */
+.education-timeline {
+  border-left: 2px solid #e2e8f0;
+  margin-left: 0.5rem;
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline dot */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.55rem;
+  top: 0.25rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--main-color);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.timeline-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-grey);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-grey);
+  text-align: justify;
+}
+
+/* Skills list grid */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skills-row-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-grey);
+  margin-bottom: 0.3rem;
+}
+
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: var(--text-dark);
+  padding: 0.3rem 0.6rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid #e2e8f0;
+}
+
+.skill-badge i {
+  color: var(--main-color);
+  font-size: 0.9rem;
+}
+
+/* Project Presentation Showcase (Pages 3 to 12) */
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.project-idx {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--main-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.project-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+.project-image-box {
+  width: 100%;
+  height: 190px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.project-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.project-image-box:hover img {
+  transform: scale(1.05);
+}
+
+/* Custom Gradient Graphics when project doesn't have cover image */
+.project-gradient-graphic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 200% 200%;
+  animation: moveGradient 6s ease infinite;
+}
+
+.project-graphic-icon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-desc-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-grey);
+  text-align: justify;
+  margin-bottom: auto;
+}
+
+.project-stack {
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.project-actions .primary-btn, 
+.project-actions .secondary-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+/* Contact Page (Page 13) */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-grey);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-grow: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: #fff;
+  transition: all 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--main-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.contact-form textarea.form-input {
+  min-height: 100px;
+  max-height: 160px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* Back Cover Page (Page 14) */
+.back-cover-page {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #030712 0%, #0f172a 100%);
+  border: 4px double #1e293b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem;
+  position: relative;
+  color: #fff;
+  border-radius: 8px 0 0 8px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8), -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.back-cover-page::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  pointer-events: none;
+}
+
+.back-cover-logo {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.back-cover-text {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 500;
+  max-width: 250px;
+  line-height: 1.5;
+}
+
+/* Glassmorphism Quick Navigation Bar (Bottom dock) */
+.glass-nav-dock {
+  margin-top: 2rem;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInUp 1s 0.3s forwards;
+}
+
+.nav-dock-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  padding: 0.5rem 0.9rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dock-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-dock-btn.active {
+  color: #fff;
+  background: var(--main-color);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Custom UI Alert Banner (Popup notifications) */
+.toast-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+}
+
+/* Keyframes & Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive constraints */
+@media (max-width: 1150px) {
+  .book-wrapper {
+    width: 95vw;
+    height: calc(95vw * 0.68);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+  .portfolio-container-app {
+    padding: 1rem;
+    min-height: auto;
+  }
+  .book-wrapper {
+    height: auto;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  /* On small screens, react-pageflip can render in single page view, adjust padding */
+  .page-inner-content {
+    padding: 2rem 1.5rem;
+  }
+  .cover-title {
+    font-size: 2rem;
+  }
+  .cover-avatar-container {
+    width: 140px;
+    height: 140px;
+  }
+  .glass-nav-dock {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+  .nav-dock-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+  }
+}
