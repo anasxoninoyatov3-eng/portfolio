@@ -65,7 +65,7 @@ function App() {
       idx: '01',
       title: "Mazza Food",
       subtitle: "Ovqat yetkazib berish & Bot integratsiyasi",
-      desc: "Zamonaviy, to'liq moslashuvchan ovqat buyurtma va yetkazib berish veb-ilovasi. Python asosidagi Telegram bot va mobil veb-wrapper bilan real vaqtda xabarnomalar, buyurtmalarni boshqarish va jonli menyu integratsiyasi.",
+      desc: "Zamonaviy, to'liq moslashuvchan ovqat buyurtma va yetkazib berish veb-ilovasi. Python asosidagi Telegram bot va mobil o'rovchi bilan real vaqtda xabarnomalar, buyurtmalarni boshqarish va jonli menyu integratsiyasi.",
       tags: ["React", "CSS3", "Python Bot", "Telegram API"],
       image: "/website 3.png",
       liveLink: "https://www.mazza-food.uz",
@@ -87,17 +87,17 @@ function App() {
       idx: '03',
       title: "IMA Clock",
       subtitle: "Dinamik Aqlli Soat",
-      desc: "Real vaqt soati ilovasi — analog va raqamli UI dizaynlar, taymdown, sekundomer va silliq animatsiyadagi soat mili harakatli qoʻngʻiroqlar bilan.",
+      desc: "Real vaqt soati ilovasi — analog va raqamli interfeys dizaynlari, orqaga sanash, sekundomer va silliq animatsiyadagi soat mili harakati bilan.",
       tags: ["HTML5", "CSS3", "JavaScript", "Netlify"],
       image: "",
       liveLink: "https://ima-clock.netlify.app",
-      codeLink: "https://github.com/anasxoninoyatov3-eng/ima-clock",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/ai-clock",
       gradient: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
     },
     {
       idx: '04',
       title: "English New Kelajak",
-      subtitle: "Interaktiv E-Learning Portali",
+      subtitle: "Interaktiv Elektron Ta'lim Portali",
       desc: "Ingliz tilini o'rganuvchilar uchun mo'ljallangan ta'lim platformasi. Interaktiv darslar, audio-vizual testlar, kuzatuv modullari va o'zbek o'quvchilari uchun tarjima qo'llanmalari.",
       tags: ["React", "CSS3", "Vite", "Netlify"],
       image: "",
@@ -108,7 +108,7 @@ function App() {
     {
       idx: '05',
       title: "AI Clicker O'yini",
-      subtitle: "Bosqichli Idle O'yini",
+      subtitle: "Bosqichli Avtomatik O'yin",
       desc: "Futuristik sun'iy intellekt mavzusidagi qiziqarli bosqichli o'yin. O'yinchilar klik qiladi va yangilanishlar sotib oladi (neyromorf chiplar, bulut klasterlar) sun'iy intellekt ballari to'plash uchun.",
       tags: ["React", "Tailwind CSS", "Local Storage"],
       image: "",
@@ -131,7 +131,7 @@ function App() {
       idx: '07',
       title: "TaskFlow Dashboard",
       subtitle: "Minimalist Kanban Rejalashtiruvchi",
-      desc: "Drag-and-drop holat ustunlari, vazifa ustuvorlik teglari, tavsif maydonlari, nazorat ro'yxatlari va mahalliy ma'lumotlarni saqlash bilan Kanban uslubidagi vazifa taxtasi.",
+      desc: "Sudrab-tashlash holat ustunlari, vazifa ustuvorlik teglari, tavsif maydonlari, nazorat ro'yxatlari va mahalliy ma'lumotlarni saqlash bilan Kanban uslubidagi vazifa taxtasi.",
       tags: ["React", "HTML5 Drag-Drop", "Flex CSS"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -153,7 +153,7 @@ function App() {
       idx: '09',
       title: "CryptoSphere Tracker",
       subtitle: "Kriptovalyuta Agregatori",
-      desc: "CoinGecko API'dan yangilanishlarni oladigan real vaqt narx agregatori dashboard. Narx grafiklari, bozor kapitalizatsiyasi, qidiruv filtrlari va foydalanuvchi kuzatuv ro'yxati bilan.",
+      desc: "CoinGecko API'dan yangilanishlarni oladigan real vaqt narx agregatori boshqaruv paneli. Narx grafiklari, bozor kapitalizatsiyasi, qidiruv filtrlari va foydalanuvchi kuzatuv ro'yxati bilan.",
       tags: ["React", "Axios", "CoinGecko API"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -164,7 +164,7 @@ function App() {
       idx: '10',
       title: "EduPath LMS",
       subtitle: "Onlayn Kurslar O'quv Platformasi",
-      desc: "Onlayn kurslar bozori uchun zamonaviy landing sahifa va backend maketi. Interaktiv kategoriyalar, video preview panellari, dashboard ko'rsatkichlari, test modallari va to'lov simulyatsiyasi.",
+      desc: "Onlayn kurslar bozori uchun zamonaviy tashrif sahifasi va orqa qism maketi. Interaktiv kategoriyalar, video namoyish panellari, boshqaruv paneli ko'rsatkichlari, test modallari va to'lov simulyatsiyasi.",
       tags: ["React", "CSS Modules", "Context API"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -357,7 +357,7 @@ function App() {
                   <div className="project-showcase">
                     <div className="project-meta">
                       <span className="project-idx">Loyiha {proj.idx} / 10</span>
-                      <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 'bold' }}>Interaktiv Demo</span>
+                      <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 'bold' }}>Interaktiv Namoyish</span>
                     </div>
 
                     <h2 className="project-title">{proj.title}</h2>
