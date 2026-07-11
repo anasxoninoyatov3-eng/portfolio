@@ -43,7 +43,6 @@ body {
   position: relative;
 }
 
-/* Glassmorphism Title Header */
 .app-header {
   margin-bottom: 2rem;
   text-align: center;
@@ -67,7 +66,6 @@ body {
   margin-top: 0.3rem;
 }
 
-/* Main 3D Book Layout Container */
 .book-wrapper {
   position: relative;
   width: 1100px;
@@ -78,7 +76,6 @@ body {
   perspective: 2000px;
 }
 
-/* Custom Spine Overlay to make the book look physical */
 .book-spine-lines {
   position: absolute;
   top: 0;

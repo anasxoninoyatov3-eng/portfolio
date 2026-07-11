@@ -65,9 +65,9 @@ function App() {
       idx: '01',
       title: "Mazza Food",
       subtitle: "Ovqat yetkazib berish & Bot integratsiyasi",
-      desc: "Zamonaviy, to'liq moslashuvchan ovqat buyurtma va yetkazib berish veb-ilovasi. Python asosidagi Telegram bot va mobil o'rovchi bilan real vaqtda xabarnomalar, buyurtmalarni boshqarish va jonli menyu integratsiyasi.",
-      tags: ["React", "CSS3", "Python Bot", "Telegram API"],
-      image: "/website 3.png",
+      desc: "To'liq moslashuvchan ovqat buyurtma va yetkazib berish tizimi. Python bot va mobil interfeys bilan real vaqtda buyurtmalar.",
+      tags: ["React", "Python Bot", "Telegram API"],
+      image: "/mazza-food.png",
       liveLink: "https://www.mazza-food.uz",
       codeLink: "https://github.com/anasxoninoyatov3-eng/mazza-food",
       gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
@@ -76,116 +76,116 @@ function App() {
       idx: '02',
       title: "Anas Tour",
       subtitle: "Sayohat Bron Qilish Platformasi",
-      desc: "Ko'zni qamashtiruvchi va interaktiv turizm landing platformasi. Dinamik paketlar, interaktiv marshrut rejalari, sharhlar bo'limi va silliq aylantirish animatsiyalari bilan.",
-      tags: ["HTML5", "CSS3", "JavaScript", "Netlify"],
-      image: "",
+      desc: "Interaktiv turizm landing sahifasi. Dinamik paketlar, marshrut rejalari va silliq animatsiyalar bilan ta'minlangan.",
+      tags: ["React", "Tailwind CSS", "Framer Motion"],
+      image: "/anas-tour.png",
       liveLink: "https://anastour.netlify.app",
       codeLink: "https://github.com/anasxoninoyatov3-eng/anas-tour",
       gradient: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)"
     },
     {
       idx: '03',
-      title: "IMA Clock",
-      subtitle: "Dinamik Aqlli Soat",
-      desc: "Real vaqt soati ilovasi — analog va raqamli interfeys dizaynlari, orqaga sanash, sekundomer va silliq animatsiyadagi soat mili harakati bilan.",
-      tags: ["HTML5", "CSS3", "JavaScript", "Netlify"],
-      image: "",
-      liveLink: "https://ima-clock.netlify.app",
-      codeLink: "https://github.com/anasxoninoyatov3-eng/ai-clock",
-      gradient: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
+      title: "Weatherly",
+      subtitle: "Real Vaqt Ob-havo Monitori",
+      desc: "OpenWeather API orqali hududingizdagi ob-havo ma'lumotlarini kuzatib borish uchun zamonaviy va tezkor ilova.",
+      tags: ["React", "API", "ChartJS"],
+      image: "/weather.png",
+      liveLink: "https://ts-weather-kappa.vercel.app",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/ts-weather",
+      gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
     },
     {
       idx: '04',
-      title: "English New Kelajak",
-      subtitle: "Interaktiv Elektron Ta'lim Portali",
-      desc: "Ingliz tilini o'rganuvchilar uchun mo'ljallangan ta'lim platformasi. Interaktiv darslar, audio-vizual testlar, kuzatuv modullari va o'zbek o'quvchilari uchun tarjima qo'llanmalari.",
-      tags: ["React", "CSS3", "Vite", "Netlify"],
-      image: "",
-      liveLink: "https://english-new-kelajak.netlify.app",
-      codeLink: "https://github.com/anasxoninoyatov3-eng/english-new-kelajak",
+      title: "EliteForm Fitness",
+      subtitle: "Fitnes va Sog'lom Turmush Portali",
+      desc: "Mashg'ulotlar rejasi, kaloriyalarni hisoblash vositasi va sport darslari uchun mo'ljallangan zamonaviy platforma.",
+      tags: ["React", "CSS3", "Figma Design"],
+      image: "/eliteform.png",
+      liveLink: "https://eliteform-navy.vercel.app/",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/eliteform",
       gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
     },
     {
       idx: '05',
-      title: "AI Clicker O'yini",
-      subtitle: "Bosqichli Avtomatik O'yin",
-      desc: "Futuristik sun'iy intellekt mavzusidagi qiziqarli bosqichli o'yin. O'yinchilar klik qiladi va yangilanishlar sotib oladi (neyromorf chiplar, bulut klasterlar) sun'iy intellekt ballari to'plash uchun.",
-      tags: ["React", "Tailwind CSS", "Local Storage"],
-      image: "",
-      liveLink: "https://ai-clicker.netlify.app",
-      codeLink: "https://github.com/anasxoninoyatov3-eng/ai-clicker",
+      title: "English New Kelajak",
+      subtitle: "Interaktiv Elektron Ta'lim Portali",
+      desc: "Ingliz tilini o'rganuvchilar uchun mo'ljallangan ta'lim platformasi (enfuture.uz). Interaktiv darslar va vizual o'quv modullari.",
+      tags: ["React", "Vite", "Netlify"],
+      image: "/enfuture.png",
+      liveLink: "https://www.enfuture.uz",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/english-new-kelajak",
       gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
     },
     {
       idx: '06',
-      title: "O'zbek Ertaklari",
-      subtitle: "Interaktiv Ertak O'quvchisi",
-      desc: "O'zbek folklorini dinamik rasmlar va audio imkoniyatlar bilan taqdim etuvchi raqamli kutubxona. Foydalanuvchilar 'Zumrad va Qimmat' kabi ertaklarni chiroyli elektron kitob interfeysi orqali o'qishi mumkin.",
-      tags: ["React", "Tailwind CSS", "JSON Db", "Ertak"],
-      image: "",
-      liveLink: "https://github.com/anasxoninoyatov3-eng",
-      codeLink: "https://github.com/anasxoninoyatov3-eng",
-      gradient: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)"
-    },
-    {
-      idx: '07',
-      title: "TaskFlow Dashboard",
-      subtitle: "Minimalist Kanban Rejalashtiruvchi",
-      desc: "Sudrab-tashlash holat ustunlari, vazifa ustuvorlik teglari, tavsif maydonlari, nazorat ro'yxatlari va mahalliy ma'lumotlarni saqlash bilan Kanban uslubidagi vazifa taxtasi.",
-      tags: ["React", "HTML5 Drag-Drop", "Flex CSS"],
-      image: "",
-      liveLink: "https://github.com/anasxoninoyatov3-eng",
-      codeLink: "https://github.com/anasxoninoyatov3-eng",
+      title: "AI Clicker O'yini",
+      subtitle: "Futuristik Clicker O'yin",
+      desc: "Neyromorf chiplar va bulut klasterlar sotib olib, ball to'plashga mo'ljallangan qiziqarli va dinamik o'yin.",
+      tags: ["React", "Tailwind CSS", "Local Storage"],
+      image: "/ai-clicker.png",
+      liveLink: "https://ai-clicker.netlify.app",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/ai-clicker",
       gradient: "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)"
     },
     {
+      idx: '07',
+      title: "MyMath.uz",
+      subtitle: "Matematika Ta'lim Sayti",
+      desc: "Maxsus ishlab chiqilgan matematika o'quv platformasi. O'quvchilar uchun qulay interfeys va darslar to'plami.",
+      tags: ["React", "Responsive UI"],
+      image: "/mymath.png",
+      liveLink: "https://ts-mymath.vercel.app",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/mymath",
+      gradient: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)"
+    },
+    {
       idx: '08',
-      title: "Weatherly Ob-havo",
-      subtitle: "Real Vaqt Ob-havo Monitori",
-      desc: "OpenWeather API'dan ma'lumot oluvchi zamonaviy ob-havo bashoratchi. 5 kunlik tendensiyalar, dinamik orqa fon, shamol tezligi, namlik ko'rsatkichlari va mahalliy vaqt zonalari.",
-      tags: ["React", "ChartJS", "OpenWeather API"],
-      image: "",
-      liveLink: "https://github.com/anasxoninoyatov3-eng",
-      codeLink: "https://github.com/anasxoninoyatov3-eng",
-      gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+      title: "O'zbek Ertaklari",
+      subtitle: "Interaktiv Ertak O'quvchisi",
+      desc: "Folklorimizni raqamli ko'rinishda taqdim etuvchi kutubxona. Audio va chiroyli dizayn bilan boyitilgan.",
+      tags: ["React", "Tailwind", "JSON Data"],
+      image: "/ertaklar.png",
+      liveLink: "https://ts-book.vercel.app",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/uz-ertaklar",
+      gradient: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
     },
     {
       idx: '09',
-      title: "CryptoSphere Tracker",
-      subtitle: "Kriptovalyuta Agregatori",
-      desc: "CoinGecko API'dan yangilanishlarni oladigan real vaqt narx agregatori boshqaruv paneli. Narx grafiklari, bozor kapitalizatsiyasi, qidiruv filtrlari va foydalanuvchi kuzatuv ro'yxati bilan.",
-      tags: ["React", "Axios", "CoinGecko API"],
-      image: "",
-      liveLink: "https://github.com/anasxoninoyatov3-eng",
-      codeLink: "https://github.com/anasxoninoyatov3-eng",
-      gradient: "linear-gradient(135deg, #10b981 0%, #047857 100%)"
+      title: "Torven Snow Bot",
+      subtitle: "Telegram Avtomatlashtirish Boti",
+      desc: "Shaxsiy brendingiz uchun maxsus ishlab chiqilgan telegram bot. Har xil turdagi xabarnomalar va interaktiv buyruqlar.",
+      tags: ["Python", "Aiogram", "API"],
+      image: "/bot-img.png",
+      liveLink: "https://t.me/tsportfolio_bot",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/torven-bot",
+      gradient: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
     },
     {
       idx: '10',
-      title: "EduPath LMS",
-      subtitle: "Onlayn Kurslar O'quv Platformasi",
-      desc: "Onlayn kurslar bozori uchun zamonaviy tashrif sahifasi va orqa qism maketi. Interaktiv kategoriyalar, video namoyish panellari, boshqaruv paneli ko'rsatkichlari, test modallari va to'lov simulyatsiyasi.",
-      tags: ["React", "CSS Modules", "Context API"],
-      image: "",
-      liveLink: "https://github.com/anasxoninoyatov3-eng",
-      codeLink: "https://github.com/anasxoninoyatov3-eng",
-      gradient: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      title: "Ai Image Generator",
+      subtitle: "Sun'iy intellekt yordamida rasm yaratish",
+      desc: "OpenAI API orqali foydalanuvchi so'rovlariga mos rasm yaratish imkonini beruvchi interaktiv ilova. Foydalanuvchi tajribasini soddalashtiradi va tezkor natijalar beradi.",
+      tags: ["React", "Tailwind", "UI/UX"],
+      image: "/mygov.png",
+      liveLink: "https://ts-ai-image-generator.vercel.app/",
+      codeLink: "https://github.com/anasxoninoyatov3-eng/mygov-help",
+      gradient: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
     }
   ];
 
   return (
-    <div className="portfolio-container-app">
+    <div className="portfolio-container-app" style={{ marginBottom: '150px' }}>
       {/* Title Header */}
       <header className="app-header">
         <h1>3D PORTFOLIO KITOB</h1>
         <p>Sahifani burish uchun burchakni tortib siljiting</p>
       </header>
 
-      {/* Book Container withspine overlays */}
       <div className="book-wrapper">
         <div className="book-spine-lines"></div>
 
         <HTMLFlipBook
+          style={{ marginBottom: '50px' }}
           width={530}
           height={715}
           size="stretch"
