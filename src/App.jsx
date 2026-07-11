@@ -14,29 +14,11 @@ Page.displayName = 'Page';
 
 function App() {
   const bookRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(0);
 
   const flipTo = (pageIdx) => {
     if (bookRef.current) {
       bookRef.current.pageFlip().flip(pageIdx);
     }
-  };
-
-  const handleNext = () => {
-    if (bookRef.current) {
-      bookRef.current.pageFlip().flipNext();
-    }
-  };
-
-  const handlePrev = () => {
-    if (bookRef.current) {
-      bookRef.current.pageFlip().flipPrev();
-    }
-  };
-
-  // Callback on page change
-  const onPageFlip = (e) => {
-    setCurrentPage(e.data);
   };
 
   const [formState, setFormState] = useState({ fullName: '', telegramUser: '', message: '' });
@@ -78,13 +60,12 @@ function App() {
       });
   };
 
-  // Projects database (10 pages)
   const projects = [
     {
       idx: '01',
       title: "Mazza Food",
-      subtitle: "Food Delivery & Bot Integration",
-      desc: "A premium, fully responsive food ordering and delivery web application. Seamlessly integrates with a Python-based Telegram bot and mobile web wrappers for real-time notification alerts, order dispatching, and live menus.",
+      subtitle: "Ovqat yetkazib berish & Bot integratsiyasi",
+      desc: "Zamonaviy, to'liq moslashuvchan ovqat buyurtma va yetkazib berish veb-ilovasi. Python asosidagi Telegram bot va mobil veb-wrapper bilan real vaqtda xabarnomalar, buyurtmalarni boshqarish va jonli menyu integratsiyasi.",
       tags: ["React", "CSS3", "Python Bot", "Telegram API"],
       image: "/website 3.png",
       liveLink: "https://www.mazza-food.uz",
@@ -94,8 +75,8 @@ function App() {
     {
       idx: '02',
       title: "Anas Tour",
-      subtitle: "Travel Booking Platform",
-      desc: "A visually rich and interactive travel and tourism landing platform. Features dynamic packages, interactive itineraries, review sections, and smooth scroll animations for vacation planning.",
+      subtitle: "Sayohat Bron Qilish Platformasi",
+      desc: "Ko'zni qamashtiruvchi va interaktiv turizm landing platformasi. Dinamik paketlar, interaktiv marshrut rejalari, sharhlar bo'limi va silliq aylantirish animatsiyalari bilan.",
       tags: ["HTML5", "CSS3", "JavaScript", "Netlify"],
       image: "",
       liveLink: "https://anastour.netlify.app",
@@ -105,8 +86,8 @@ function App() {
     {
       idx: '03',
       title: "IMA Clock",
-      subtitle: "Dynamic Smart Clock",
-      desc: "A real-time clock application featuring premium analog and digital UI designs, countdown timers, stopwatch functions, and customizable dark/light theme options with smooth hand transitions.",
+      subtitle: "Dinamik Aqlli Soat",
+      desc: "Real vaqt soati ilovasi — analog va raqamli UI dizaynlar, taymdown, sekundomer va silliq animatsiyadagi soat mili harakatli qoʻngʻiroqlar bilan.",
       tags: ["HTML5", "CSS3", "JavaScript", "Netlify"],
       image: "",
       liveLink: "https://ima-clock.netlify.app",
@@ -116,8 +97,8 @@ function App() {
     {
       idx: '04',
       title: "English New Kelajak",
-      subtitle: "Interactive E-Learning Portal",
-      desc: "An educational platform designed for language learners. Features interactive lessons, audio-visual quizzes, tracking modules, and translation guides tailored for Uzbek students learning English.",
+      subtitle: "Interaktiv E-Learning Portali",
+      desc: "Ingliz tilini o'rganuvchilar uchun mo'ljallangan ta'lim platformasi. Interaktiv darslar, audio-vizual testlar, kuzatuv modullari va o'zbek o'quvchilari uchun tarjima qo'llanmalari.",
       tags: ["React", "CSS3", "Vite", "Netlify"],
       image: "",
       liveLink: "https://english-new-kelajak.netlify.app",
@@ -126,9 +107,9 @@ function App() {
     },
     {
       idx: '05',
-      title: "AI Clicker Game",
-      subtitle: "Incremental Idle Game",
-      desc: "A fun, engaging incremental game with a futuristic AI theme. Players click and purchase upgrades (neuromorphic chips, cloud processing clusters) to generate artificial intelligence points.",
+      title: "AI Clicker O'yini",
+      subtitle: "Bosqichli Idle O'yini",
+      desc: "Futuristik sun'iy intellekt mavzusidagi qiziqarli bosqichli o'yin. O'yinchilar klik qiladi va yangilanishlar sotib oladi (neyromorf chiplar, bulut klasterlar) sun'iy intellekt ballari to'plash uchun.",
       tags: ["React", "Tailwind CSS", "Local Storage"],
       image: "",
       liveLink: "https://ai-clicker.netlify.app",
@@ -137,10 +118,10 @@ function App() {
     },
     {
       idx: '06',
-      title: "Uzbek Fairy Tales",
-      subtitle: "Interactive Story Reader",
-      desc: "A digital library presenting Uzbek folklore with dynamic illustrations and audio features. Users can browse stories like 'Zumrad va Qimmat' and read them within a beautiful e-book reader interface.",
-      tags: ["React", "Tailwind CSS", "JSON Db", "Storytelling"],
+      title: "O'zbek Ertaklari",
+      subtitle: "Interaktiv Ertak O'quvchisi",
+      desc: "O'zbek folklorini dinamik rasmlar va audio imkoniyatlar bilan taqdim etuvchi raqamli kutubxona. Foydalanuvchilar 'Zumrad va Qimmat' kabi ertaklarni chiroyli elektron kitob interfeysi orqali o'qishi mumkin.",
+      tags: ["React", "Tailwind CSS", "JSON Db", "Ertak"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
       codeLink: "https://github.com/anasxoninoyatov3-eng",
@@ -149,8 +130,8 @@ function App() {
     {
       idx: '07',
       title: "TaskFlow Dashboard",
-      subtitle: "Minimalist Kanban Planner",
-      desc: "A Kanban-style task board web app featuring drag-and-drop status columns, task prioritization tags, description fields, checklists, and local data persistence for individual developers.",
+      subtitle: "Minimalist Kanban Rejalashtiruvchi",
+      desc: "Drag-and-drop holat ustunlari, vazifa ustuvorlik teglari, tavsif maydonlari, nazorat ro'yxatlari va mahalliy ma'lumotlarni saqlash bilan Kanban uslubidagi vazifa taxtasi.",
       tags: ["React", "HTML5 Drag-Drop", "Flex CSS"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -159,9 +140,9 @@ function App() {
     },
     {
       idx: '08',
-      title: "Weatherly forecast",
-      subtitle: "Real-Time Weather Monitor",
-      desc: "A sleek weather forecaster fetching data from OpenWeather API. Displays 5-day trends, dynamic backgrounds matching current weather condition, wind speeds, humidity metrics, and local time zones.",
+      title: "Weatherly Ob-havo",
+      subtitle: "Real Vaqt Ob-havo Monitori",
+      desc: "OpenWeather API'dan ma'lumot oluvchi zamonaviy ob-havo bashoratchi. 5 kunlik tendensiyalar, dinamik orqa fon, shamol tezligi, namlik ko'rsatkichlari va mahalliy vaqt zonalari.",
       tags: ["React", "ChartJS", "OpenWeather API"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -171,8 +152,8 @@ function App() {
     {
       idx: '09',
       title: "CryptoSphere Tracker",
-      subtitle: "Cryptocurrency Aggregator",
-      desc: "A real-time price aggregator dashboard fetching updates from the CoinGecko API. Compiles pricing charts, market caps, search filters, and user watchlist alerts with dark themed UI.",
+      subtitle: "Kriptovalyuta Agregatori",
+      desc: "CoinGecko API'dan yangilanishlarni oladigan real vaqt narx agregatori dashboard. Narx grafiklari, bozor kapitalizatsiyasi, qidiruv filtrlari va foydalanuvchi kuzatuv ro'yxati bilan.",
       tags: ["React", "Axios", "CoinGecko API"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -182,8 +163,8 @@ function App() {
     {
       idx: '10',
       title: "EduPath LMS",
-      subtitle: "Online Course Learning Platform",
-      desc: "A modern landing page and backend mock for an online courses marketplace. Interactive categories, video preview panels, dashboard metrics, quiz modals, and checkout simulation interfaces.",
+      subtitle: "Onlayn Kurslar O'quv Platformasi",
+      desc: "Onlayn kurslar bozori uchun zamonaviy landing sahifa va backend maketi. Interaktiv kategoriyalar, video preview panellari, dashboard ko'rsatkichlari, test modallari va to'lov simulyatsiyasi.",
       tags: ["React", "CSS Modules", "Context API"],
       image: "",
       liveLink: "https://github.com/anasxoninoyatov3-eng",
@@ -196,8 +177,8 @@ function App() {
     <div className="portfolio-container-app">
       {/* Title Header */}
       <header className="app-header">
-        <h1>INTEACTIVE 3D PORTFOLIO BOOK</h1>
-        <p>Grab a corner or click the buttons below to flip through the story</p>
+        <h1>3D PORTFOLIO KITOB</h1>
+        <p>Sahifani burish uchun burchakni tortib siljiting</p>
       </header>
 
       {/* Book Container withspine overlays */}
@@ -215,34 +196,30 @@ function App() {
           maxShadowOpacity={0.6}
           showCover={true}
           mobileScrollSupport={true}
-          onFlip={onPageFlip}
           ref={bookRef}
           className="portfolio-book"
         >
           {/* PAGE 0: FRONT COVER */}
           <Page className="page-cover">
             <div className="cover-page">
-              <span className="cover-badge">Interactive Portfolio</span>
+              <span className="cover-badge">Interaktiv Portfolio</span>
               <div className="cover-avatar-container">
                 <img src="/Logo.png" alt="Inoyatov M.Anasxon" className="cover-avatar" />
               </div>
               <h1 className="cover-title">INOYATOV M.ANASXON</h1>
-              <h3 className="cover-subtitle">Web Developer</h3>
+              <h3 className="cover-subtitle">Veb Dasturchi</h3>
               <p className="cover-desc text-white opacity-80" style={{ maxWidth: '280px', fontSize: '0.9rem', lineHeight: '1.5' }}>
-                A showcase of modern web developments, front-end designs, and technical skills wrapped in a 3D book experience.
+                Zamonaviy veb-ishlanmalar, front-end dizaynlar va texnik ko'nikmalar to'plami — 3D kitob tajribasida.
               </p>
-              <div className="cover-footer font-medium">
-                <span>EST. 2026 // OPEN BOOK</span>
-              </div>
             </div>
           </Page>
 
-          {/* PAGE 1: ABOUT MYSELF */}
+          {/* SAHIFA 1: MEN HAQIMDA */}
           <Page className="page-left">
             <div className="page-inner-content">
               <div className="page-header">
-                <span>About Myself</span>
-                <span>Page 1</span>
+                <span>Men Haqimda</span>
+                <span>1-sahifa</span>
               </div>
 
               <div className="profile-section">
@@ -250,9 +227,8 @@ function App() {
                   <img src="/Logo.png" alt="M. Anasxon Inoyatov" />
                 </div>
                 <h2 className="profile-name">M. Anasxon Inoyatov</h2>
-                <h3 className="profile-role">Web Developer</h3>
+                <h3 className="profile-role">Veb Dasturchi</h3>
 
-                {/* Social circles */}
                 <div className="social-links">
                   <a href="https://t.me/torvensnow7" target="_blank" rel="noopener noreferrer" className="social-btn">
                     <i className="bx bxl-telegram"></i>
@@ -269,52 +245,42 @@ function App() {
                 </div>
 
                 <p className="profile-desc">
-                  Hello! I am M. Anasxon Inoyatov, a passionate Front-End Developer. I craft modern, fast, and responsive web
-                  applications using React, JavaScript, and CSS. I turn complex designs into clean, pixel-perfect
-                  code while ensuring seamless and engaging user experiences.
+                  Salom! Men M. Anasxon Inoyatov — ishtiyoqli Front-End dasturchiman. React, JavaScript va CSS yordamida zamonaviy, tez va moslashuvchan veb-ilovalar yarataman. Murakkab dizaynlarni piksel darajasida aniq, sof kodga aylantirib, foydalanuvchilarga silliq va qiziqarli tajriba taqdim etaman.
                 </p>
 
-                {/* Actions */}
                 <div className="profile-cta">
                   <button className="primary-btn" onClick={() => flipTo(13)}>
-                    <i className="bx bxs-envelope" style={{ marginRight: '0.4rem' }}></i> Contact Me
+                    <i className="bx bxs-envelope" style={{ marginRight: '0.4rem' }}></i> Bog'lanish
                   </button>
                   <a href="https://github.com/anasxoninoyatov3-eng" target="_blank" rel="noopener noreferrer" className="secondary-btn">
-                    <i className="bx bxl-github" style={{ marginRight: '0.4rem' }}></i> GitHub Profile
+                    <i className="bx bxl-github" style={{ marginRight: '0.4rem' }}></i> GitHub Sahifa
                   </a>
                 </div>
               </div>
 
-              <div className="page-footer">
-                <span>Resume Folder</span>
-                <span className="next-page-swipe" onClick={handleNext}>
-                  Next <i className="bx bx-chevron-right"></i>
-                </span>
-              </div>
             </div>
           </Page>
 
-          {/* PAGE 2: RESUME & EDUCATION */}
+          {/* SAHIFA 2: RESUME & TA'LIM */}
           <Page className="page-right">
             <div className="page-inner-content">
               <div className="page-header">
-                <span>Resume & Capabilities</span>
-                <span>Page 2</span>
+                <span>Rezyume va Ko'nikmalar</span>
+                <span>2-sahifa</span>
               </div>
 
               <div>
                 <h3 className="timeline-section-title">
-                  <i className="bx bxs-certification"></i> Education
+                  <i className="bx bxs-certification"></i> Ta'lim
                 </h3>
                 <div className="education-timeline">
-                  {/* Timeline with new entry */}
                   <div className="timeline-item">
                     <div className="timeline-date">
-                      <i className="bx bxs-calendar"></i> 2020 - Present
+                      <i className="bx bxs-calendar"></i> 2020 - Hozir
                     </div>
-                    <div className="timeline-title">Specialized School No. 2</div>
+                    <div className="timeline-title">2-son ixtisoslashtirilgan maktab</div>
                     <div className="timeline-desc">
-                      Deepening my knowledge in mathematics, physics, and computer science, building a solid academic foundation.
+                      Matematika, fizika va informatika bo'yicha bilimlarni chuqurlashtirib, mustahkam akademik poydevor yaratmoqda.
                     </div>
                   </div>
 
@@ -322,9 +288,9 @@ function App() {
                     <div className="timeline-date">
                       <i className="bx bxs-calendar"></i> 2022 - 2026
                     </div>
-                    <div className="timeline-title">BS Computer Science</div>
+                    <div className="timeline-title">Bakalavr — Kompyuter Fanlari</div>
                     <div className="timeline-desc">
-                      Studying core computer science concepts, software engineering, algorithms, and advanced web development.
+                      Kompyuter fanlari kontseptsiyalari, dasturiy ta'minot muhandisligi, algoritmlar va ilg'or veb-ishlanmalarni o'rganmoqda.
                     </div>
                   </div>
 
@@ -332,9 +298,9 @@ function App() {
                     <div className="timeline-date">
                       <i className="bx bxs-calendar"></i> 2018 - 2020
                     </div>
-                    <div className="timeline-title">College Program</div>
+                    <div className="timeline-title">Kollej Dasturi</div>
                     <div className="timeline-desc">
-                      Gained early exposure to programming basics, multimedia design, and general computer architecture.
+                      Dasturlash asoslari, multimedia dizayn va kompyuter arxitekturasiga ilk tanishuv, kodlashga qiziqishni uyg'otgan.
                     </div>
                   </div>
 
@@ -342,16 +308,15 @@ function App() {
                     <div className="timeline-date">
                       <i className="bx bxs-calendar"></i> 2016 - 2018
                     </div>
-                    <div className="timeline-title">High School Diploma</div>
+                    <div className="timeline-title">O'rta Maktab Diplomi</div>
                     <div className="timeline-desc">
-                      Completed foundational studies with a strong focus on mathematics and logic, paving the way for tech.
+                      Matematika va mantiqqa kuchli e'tibor bilan asosiy ta'lim yakunlangan, texnologiya yo'lida poydevor qo'yilgan.
                     </div>
                   </div>
                 </div>
 
-                {/* Tech Skills */}
                 <h3 className="timeline-section-title">
-                  <i className="bx bxs-cog"></i> Technical Skills
+                  <i className="bx bxs-cog"></i> Texnik Ko'nikmalar
                 </h3>
                 <div className="skills-container">
                   <div>
@@ -364,7 +329,7 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <div className="skills-row-title">Backend & Design</div>
+                    <div className="skills-row-title">Backend va Dizayn</div>
                     <div className="skills-badges">
                       <span className="skill-badge"><i className="bx bxl-nodejs"></i> Node.js</span>
                       <span className="skill-badge"><i className="bx bxl-python"></i> Python</span>
@@ -374,18 +339,10 @@ function App() {
                 </div>
               </div>
 
-              <div className="page-footer">
-                <span className="prev-page-swipe" onClick={handlePrev}>
-                  <i className="bx bx-chevron-left"></i> Previous
-                </span>
-                <span className="next-page-swipe" onClick={handleNext}>
-                  Projects <i className="bx bx-chevron-right"></i>
-                </span>
-              </div>
             </div>
           </Page>
 
-          {/* PAGES 3-12: PROJECTS PRESENTATION */}
+          {/* SAHIFALAR 3-12: LOYIHALAR */}
           {projects.map((proj, index) => {
             const isLeft = index % 2 === 0;
             const pageNum = index + 3;
@@ -393,33 +350,31 @@ function App() {
               <Page className={isLeft ? "page-left" : "page-right"} key={proj.idx}>
                 <div className="page-inner-content">
                   <div className="page-header">
-                    <span>Loyihalar to'plami / Projects</span>
-                    <span>Page {pageNum}</span>
+                    <span>Loyihalar To'plami</span>
+                    <span>{pageNum}-sahifa</span>
                   </div>
 
                   <div className="project-showcase">
                     <div className="project-meta">
-                      <span className="project-idx">Project {proj.idx} / 10</span>
-                      <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 'bold' }}>Interactive Demo</span>
+                      <span className="project-idx">Loyiha {proj.idx} / 10</span>
+                      <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 'bold' }}>Interaktiv Demo</span>
                     </div>
 
                     <h2 className="project-title">{proj.title}</h2>
                     <p style={{ fontSize: '0.85rem', color: '#2563eb', fontWeight: '600', marginBottom: '0.8rem' }}>{proj.subtitle}</p>
 
-                    {/* Image Box */}
                     <div className="project-image-box">
                       {proj.image ? (
                         <img src={proj.image} alt={proj.title} />
                       ) : (
                         <div className="project-gradient-graphic" style={{ background: proj.gradient }}>
-                          <i className={`bx ${proj.title.includes('Tour') ? 'bx-map-alt' : proj.title.includes('Clock') ? 'bx-time-five' : proj.title.includes('English') ? 'bx-book-open' : proj.title.includes('Game') ? 'bx-joystick' : proj.title.includes('Tales') ? 'bx-crown' : proj.title.includes('TaskFlow') ? 'bx-task' : proj.title.includes('Weather') ? 'bx-cloud-sun' : proj.title.includes('Crypto') ? 'bx-bitcoin' : 'bx-briefcase'} project-graphic-icon`}></i>
+                          <i className={`bx ${proj.title.includes('Tour') ? 'bx-map-alt' : proj.title.includes('Clock') ? 'bx-time-five' : proj.title.includes('English') ? 'bx-book-open' : proj.title.includes('O\'yin') ? 'bx-joystick' : proj.title.includes('Ertaklar') ? 'bx-crown' : proj.title.includes('TaskFlow') ? 'bx-task' : proj.title.includes('Ob-havo') ? 'bx-cloud-sun' : proj.title.includes('Crypto') ? 'bx-bitcoin' : 'bx-briefcase'} project-graphic-icon`}></i>
                         </div>
                       )}
                     </div>
 
                     <p className="project-desc-text">{proj.desc}</p>
 
-                    {/* Tags */}
                     <div className="project-stack">
                       <div className="skills-badges">
                         {proj.tags.map((tag) => (
@@ -428,50 +383,41 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Actions */}
                     <div className="project-actions">
                       <a href={proj.liveLink} target="_blank" rel="noopener noreferrer" className="primary-btn">
-                        <i className="bx bx-link-external" style={{ marginRight: '0.3rem' }}></i> Live Preview
+                        <i className="bx bx-link-external" style={{ marginRight: '0.3rem' }}></i> Jonli Ko'rinish
                       </a>
                       <a href={proj.codeLink} target="_blank" rel="noopener noreferrer" className="secondary-btn">
-                        <i className="bx bxl-github" style={{ marginRight: '0.3rem' }}></i> Source Code
+                        <i className="bx bxl-github" style={{ marginRight: '0.3rem' }}></i> Manba Kodi
                       </a>
                     </div>
                   </div>
 
-                  <div className="page-footer">
-                    <span className="prev-page-swipe" onClick={handlePrev}>
-                      <i className="bx bx-chevron-left"></i> Back
-                    </span>
-                    <span className="next-page-swipe" onClick={handleNext}>
-                      Next <i className="bx bx-chevron-right"></i>
-                    </span>
-                  </div>
                 </div>
               </Page>
             );
           })}
 
-          {/* PAGE 13: CONTACT ME */}
+          {/* SAHIFA 13: BOG'LANISH */}
           <Page className="page-left">
             <div className="page-inner-content">
               <div className="page-header">
-                <span>Contact Direct</span>
-                <span>Page 13</span>
+                <span>Bog'lanish</span>
+                <span>13-sahifa</span>
               </div>
 
               <div className="contact-section">
-                <h2 className="profile-name" style={{ textAlign: 'center', marginBottom: '0.2rem' }}>Contact Me!</h2>
-                <p className="contact-subtitle" style={{ textAlign: 'center' }}>Send directly to my Telegram inbox</p>
+                <h2 className="profile-name" style={{ textAlign: 'center', marginBottom: '0.2rem' }}>Bog'lanish!</h2>
+                <p className="contact-subtitle" style={{ textAlign: 'center' }}>Telegramga to'g'ridan-to'g'ri xabar yuboring</p>
 
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="fullname">Full Name</label>
+                    <label htmlFor="fullname">To'liq Ism</label>
                     <input
                       type="text"
                       id="fullname"
                       className="form-input"
-                      placeholder="Your Name (e.g. M. Anasxon)"
+                      placeholder="Ismingiz (masalan: M. Anasxon)"
                       value={formState.fullName}
                       onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
                       required
@@ -479,12 +425,12 @@ function App() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="telegram-username">Telegram Username</label>
+                    <label htmlFor="telegram-username">Telegram Foydalanuvchi nomi</label>
                     <input
                       type="text"
                       id="telegram-username"
                       className="form-input"
-                      placeholder="Telegram user (e.g. @username)"
+                      placeholder="Telegram (masalan: @username)"
                       value={formState.telegramUser}
                       onChange={(e) => setFormState({ ...formState, telegramUser: e.target.value })}
                       required
@@ -492,13 +438,13 @@ function App() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="message">Your Message</label>
+                    <label htmlFor="message">Xabaringiz</label>
                     <textarea
                       id="message"
                       cols="30"
                       rows="5"
                       className="form-input"
-                      placeholder="Describe your proposal or question..."
+                      placeholder="Taklif yoki savolingizni yozing..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       required
@@ -507,38 +453,30 @@ function App() {
 
                   <button type="submit" className="primary-btn form-submit-btn" disabled={loading}>
                     {loading ? (
-                      <span>Sending...</span>
+                      <span>Yuborilmoqda...</span>
                     ) : (
                       <>
-                        <i className="bx bxs-paper-plane" style={{ marginRight: '0.4rem' }}></i> Send Message
+                        <i className="bx bxs-paper-plane" style={{ marginRight: '0.4rem' }}></i> Xabar Yuborish
                       </>
                     )}
                   </button>
                 </form>
               </div>
 
-              <div className="page-footer">
-                <span className="prev-page-swipe" onClick={handlePrev}>
-                  <i className="bx bx-chevron-left"></i> Back
-                </span>
-                <span className="next-page-swipe" onClick={handleNext}>
-                  Close Cover <i className="bx bx-chevron-right"></i>
-                </span>
-              </div>
             </div>
           </Page>
 
-          {/* PAGE 14: BACK COVER */}
+          {/* SAHIFA 14: ORQA MUQOVA */}
           <Page className="page-cover">
             <div className="back-cover-page">
               <i className="bx bxs-book-heart back-cover-logo"></i>
-              <h2 className="cover-title" style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '0.5rem' }}>THE END</h2>
+              <h2 className="cover-title" style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '0.5rem' }}>OXIRI</h2>
               <p className="back-cover-text">
-                Thank you for reading through my 3D book portfolio. Let's create something great together!
+                3D portfolio kitobimni o'qiganingiz uchun rahmat. Keling, birgalikda ajoyib narsa yarataylik!
               </p>
               <div className="cover-footer font-medium" style={{ marginTop: '3rem' }}>
-                <span onClick={() => flipTo(0)} style={{ cursor: 'pointer', color: 'var(--gold-accent)', textDecoration: 'underline' }}>
-                  Back to Cover
+                <span onClick={() => flipTo(0)} style={{ cursor: 'pointer', color: 'var(--accent-color)', textDecoration: 'underline' }}>
+                  Muqovaga qaytish
                 </span>
               </div>
             </div>
@@ -547,43 +485,7 @@ function App() {
         </HTMLFlipBook>
       </div>
 
-      {/* Glassmorphic Navigation Dock */}
-      <nav className="glass-nav-dock">
-        <button
-          className={`nav-dock-btn ${currentPage === 0 ? 'active' : ''}`}
-          onClick={() => flipTo(0)}
-        >
-          <i className="bx bxs-book"></i> Cover
-        </button>
 
-        <button
-          className={`nav-dock-btn ${currentPage === 1 ? 'active' : ''}`}
-          onClick={() => flipTo(1)}
-        >
-          <i className="bx bxs-user"></i> About
-        </button>
-
-        <button
-          className={`nav-dock-btn ${currentPage === 2 ? 'active' : ''}`}
-          onClick={() => flipTo(2)}
-        >
-          <i className="bx bxs-graduation"></i> Resume
-        </button>
-
-        <button
-          className={`nav-dock-btn ${currentPage >= 3 && currentPage <= 12 ? 'active' : ''}`}
-          onClick={() => flipTo(3)}
-        >
-          <i className="bx bxs-briefcase"></i> Projects ({currentPage >= 3 && currentPage <= 12 ? `${currentPage - 2}/10` : '10'})
-        </button>
-
-        <button
-          className={`nav-dock-btn ${currentPage === 13 ? 'active' : ''}`}
-          onClick={() => flipTo(13)}
-        >
-          <i className="bx bxs-envelope"></i> Contact
-        </button>
-      </nav>
     </div>
   );
 }

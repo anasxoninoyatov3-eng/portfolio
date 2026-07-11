@@ -57,6 +57,7 @@ body {
   letter-spacing: -0.05em;
   background: linear-gradient(to right, #60a5fa, #a5b4fc);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -85,14 +86,12 @@ body {
   transform: translateX(-50%);
   width: 24px;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.4) 40%,
-    rgba(0, 0, 0, 0.15) 50%,
-    rgba(0, 0, 0, 0.4) 60%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.25) 100%);
   z-index: 10;
   pointer-events: none;
   border-radius: 2px;
@@ -253,7 +252,8 @@ body {
 }
 
 /* Interactive Navigation Buttons on Pages */
-.next-page-swipe, .prev-page-swipe {
+.next-page-swipe,
+.prev-page-swipe {
   font-size: 1.2rem;
   color: var(--text-grey);
   cursor: pointer;
@@ -291,7 +291,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--main-color);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .profile-name {
@@ -549,7 +549,7 @@ body {
   border: 1px solid #e2e8f0;
   margin-bottom: 1rem;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .project-image-box img {
@@ -598,7 +598,7 @@ body {
   gap: 0.8rem;
 }
 
-.project-actions .primary-btn, 
+.project-actions .primary-btn,
 .project-actions .secondary-btn {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -772,6 +772,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -783,6 +784,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -793,9 +795,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -813,32 +817,39 @@ body {
   body {
     overflow-y: auto;
   }
+
   .portfolio-container-app {
     padding: 1rem;
     min-height: auto;
   }
+
   .book-wrapper {
     height: auto;
     width: 100%;
     margin-bottom: 1.5rem;
   }
+
   /* On small screens, react-pageflip can render in single page view, adjust padding */
   .page-inner-content {
     padding: 2rem 1.5rem;
   }
+
   .cover-title {
     font-size: 2rem;
   }
+
   .cover-avatar-container {
     width: 140px;
     height: 140px;
   }
+
   .glass-nav-dock {
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 1rem;
     padding: 0.5rem;
   }
+
   .nav-dock-btn {
     padding: 0.4rem 0.7rem;
     font-size: 0.75rem;
